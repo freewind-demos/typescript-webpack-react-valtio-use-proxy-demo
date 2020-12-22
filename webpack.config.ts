@@ -22,14 +22,14 @@ const config: Configuration & any = {
             loader: 'babel-loader', options: {
               presets: [
                 '@babel/preset-env',
-                '@babel/preset-react'
+                '@babel/preset-react',
+                '@babel/preset-typescript'
               ],
               plugins: [
                 require.resolve('react-refresh/babel')
               ]
             }
-          },
-          {loader: 'ts-loader'}
+          }
         ]
       }]
   },
