@@ -1,7 +1,9 @@
-TypeScript Webpack Babel and Ts-Loader Demo
-=======================================
+TypeScript Webpack Babel and Ts-Loader "react-refresh" Demo
+===========================================================
 
-使用babel继续处理由ts-loader产生的代码。注意rules中的顺序是*从后向前*执行
+不知道为什么，react-fresh不生效，每次修改代码后还是页面刷新（而不是局部更新）
+
+https://github.com/pmmmwh/react-refresh-webpack-plugin/issues/34
 
 ```
 npm install
