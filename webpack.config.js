@@ -1,9 +1,7 @@
-import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import path from 'path';
-import {Configuration} from 'webpack';
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
-const config: Configuration & any = {
+const config = {
   mode: "development",
   entry: './src/entry.tsx',
   output: {
@@ -11,7 +9,18 @@ const config: Configuration & any = {
     filename: 'bundle.js'
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js']
+    extensions: ['.ts', '.tsx', '.js'],
+    fallback: {
+      "assert": false,
+      "path": false,
+      "fs": false,
+      "os": false,
+      "stream": false,
+      "buffer": false,
+      "constants": false,
+      "util": false,
+      "process":false
+    }
   },
   module: {
     rules: [
@@ -26,7 +35,7 @@ const config: Configuration & any = {
                 '@babel/preset-typescript'
               ],
               plugins: [
-                require.resolve('react-refresh/babel')
+                '@babel/plugin-proposal-class-properties',
               ]
             }
           }
@@ -34,9 +43,9 @@ const config: Configuration & any = {
       }]
   },
   plugins: [
-    new HtmlWebpackPlugin() as any,
-    new ReactRefreshWebpackPlugin(),
+    new HtmlWebpackPlugin(),
+    // new ReactRefreshWebpackPlugin(),
   ]
 }
 
-export default config;
+module.exports = config;
