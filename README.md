@@ -1,7 +1,7 @@
-TypeScript Webpack Babel "react-refresh" Demo
+TypeScript Webpack Babel typescript-preset Demo
 ===========================================================
 
-不使用ts-loader，只使用babel自己的preset-typescript，可以很容易做到react-refresh
+使用babel的preset-typescript支持react
 
 ```
 npm install
